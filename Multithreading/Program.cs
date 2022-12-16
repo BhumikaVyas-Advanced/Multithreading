@@ -10,34 +10,34 @@ namespace Multithreading
             
             //creating thread 1 and 2 to run simulatenously
 
-            Thread t1 = new Thread(ThreadFunc1);
-            Thread t2 = new Thread(ThreadFunc2);
+            Thread t1 = new Thread(MakeCheeseBread);
+            Thread t2 = new Thread(MakeCoffee);
 
-            t1.Start();
-            t2.Start();
+            t1.Start();   //start making cheese-bread
+            t2.Start();   //start making coffee
         }
 
-        public static void ThreadFunc1()
+        public static void MakeCheeseBread()
         {
-           
-            /*for (int i =0; i< 100; i++)
-            {
-                Console.WriteLine("Thread 1 : {0}", i);
-                if(i == 5)
-                {
-                    Thread.Sleep(15000);
-                }
-            }*/
+
+            Console.WriteLine("Take bread");
+            Console.WriteLine("Take Cheese");
+            Console.WriteLine("Spread Cheese");
+            Console.WriteLine("Heat in oven");
+            Thread.Sleep(5000);
+            Console.WriteLine("Cheese-Bread made!");
+
 
         }
-        public static void ThreadFunc2()
+        public static void MakeCoffee()
         {
-            
-            /*for (int i =0; i< 10; i++)
-            {
-                Console.WriteLine("Thread 2 : {0}", i);
-               
-            }*/
+            Console.WriteLine("Take a cup");
+            Console.WriteLine("Add instant coffee");
+            Console.WriteLine("Add milk");
+            Thread.Sleep(5000);
+            Console.WriteLine("Mix coffee well");
+            Thread.Sleep(6000);
+            Console.WriteLine("Coffee ready!");
 
         }
     }
